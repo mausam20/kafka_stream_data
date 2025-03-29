@@ -1,0 +1,61 @@
+{"development":{
+"kafka":{
+        "BOOT_STRAP": "dev-kafka-inst-1:9092,dev-kafka-instance-new-2:9092,dev-kafka-inst-3:9092",
+        "TOPIC": "risk_log_stream"
+},
+"service_email": "aasthaprasad@devops-im.iam.gserviceaccount.com",
+"google_cred_path": "bquery_service_account.json",
+"table_columns":["GLID",
+                "event_timestamp",
+                "event_date",
+                "event_name",
+                "activation_ticket",
+                "glusr_suspect_tagging",
+                "nach_bounce",
+                "bad_rating_comment",
+                "bi_logic",
+                "bs_ticket",
+                "pns_defaulter",
+                "ticket_type_status",
+                "comment",
+                "customer_ticket_id",
+                "hrs_tag",
+                "fk_iil_suspect_trigger_id",
+                "audit_status",
+                "insertion_time"],
+"bquery_dataset_id": "risk_score",
+"bquery_table_id" :"gluser_risk_log_wt_part",
+"bad_comment_regex":"(fraud)|(scam)|(cheat)"
+},
+
+"production":{
+        "kafka":{
+                "BOOT_STRAP": "kafka-instance-india-1a:9092,kafka-instance-india1-2b:9092,kafka-instance-india1-3c:9092",
+                "TOPIC": "risk_score_prod"
+        },
+        "service_email": "aasthaprasad@devops-im.iam.gserviceaccount.com",
+        "google_cred_path": "big-query-prod-395506-203bde3888bb.json",
+        "table_columns":["GLID",
+                        "event_timestamp",
+                        "event_date",
+                        "event_name",
+                        "activation_ticket",
+                        "glusr_suspect_tagging",
+                        "nach_bounce",
+                        "bad_rating_comment",
+                        "bi_logic",
+                        "bs_ticket",
+                        "pns_defaulter",
+                        "ticket_type_status",
+                        "comment",
+                        "customer_ticket_id",
+                        "hrs_tag",
+                        "fk_iil_suspect_trigger_id",
+                        "audit_status",
+                        "insertion_time"],
+        "bquery_dataset_id": "risk_score_prod",
+        "bquery_table_id" :"gluser_risk_log_wt_part",
+        "bad_comment_regex":"(fraud)|(scam)|(cheat)"
+        }
+
+}

@@ -1,0 +1,4 @@
+kafka-python
+pandas==2.0.1
+protobuf==4.23.4
+google-cloud-bigquery
